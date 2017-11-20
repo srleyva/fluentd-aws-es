@@ -1,0 +1,7 @@
+FROM cheungpat/fluentd-elasticsearch-aws
+
+RUN apt-get update && apt-get install -y -q --no-install-recommends         curl ca-certificates make g++ sudo bash
+RUN td-agent-gem install --no-document fluent-plugin-kubernetes_metadata_filter -v 0.32.0
+RUN td-agent-gem install --no-document fluent-plugin-aws-elasticsearch-service -v 1.0.0
+
+RUN apt-get remove -y make g++ && apt-get autoremove -y && apt-get clean -y &&         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
