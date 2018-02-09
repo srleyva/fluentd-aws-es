@@ -5,4 +5,4 @@ Enviroment variables that need to be set
   * 'AWS_ACCESS_KEY_ID`
   * 'AWS_SECRET_ACCESS_KEY'
 
-_Prometheus metrics exposed at port 5000_
+_Prometheus metrics exposed at  `:5000/metrics-text`_
